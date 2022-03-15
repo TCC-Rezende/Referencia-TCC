@@ -1,0 +1,152 @@
+-- phpMyAdmin SQL Dump
+-- version 4.7.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: 05-Dez-2021 às 23:17
+-- Versão do servidor: 5.7.17
+-- PHP Version: 5.6.30
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `tcc`
+--
+create database `tcc`;
+use `tcc`;
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tb_admin`
+--
+
+CREATE TABLE `tb_admin` (
+  `ID_ADMIN` int(2) NOT NULL COMMENT 'Código para identificar um administrador.',
+  `EMAIL` varchar(200) NOT NULL,
+  `SENHA` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `tb_admin`
+--
+
+INSERT INTO `tb_admin` (`ID_ADMIN`, `EMAIL`, `SENHA`) VALUES
+(1, 'email_lollita@gmail.com', 'lollita2021');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tb_produto`
+--
+
+CREATE TABLE `tb_produto` (
+  `ID_PROD` int(5) NOT NULL COMMENT 'Código para identificar um produto.',
+  `CATEGORIA` varchar(50) NOT NULL,
+  `TAMANHO` char(3) NOT NULL,
+  `COR` varchar(200) NOT NULL,
+  `PRECO` decimal(5,2) NOT NULL,
+  `DESCRICAO` varchar(200) DEFAULT NULL,
+  `IMAGEM_PROD` varbinary(8000) NOT NULL,
+  `QUANTIDADE` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `tb_produto`
+--
+
+INSERT INTO `tb_produto` (`ID_PROD`, `CATEGORIA`, `TAMANHO`, `COR`, `PRECO`, `DESCRICAO`, `IMAGEM_PROD`, `QUANTIDADE`) VALUES
+(1, 'VESTIDO', 'M', 'VERMELHO', '150.00', 'VESTIDO EM VISCOLINHO COM ALÃ§AS LARGAS E ELÃ¡STICO NAS COSTAS', 0x696d672f7665737469646f5f7665726d656c686f2e6a706567, 2),
+(2, 'VESTIDO', 'M', 'LARANJA', '150.00', 'VESTIDO JULIETTE COM BABADOS E AMARRAÃ§Ã£O NO PESCOÃ§O', 0x696d672f7665737469646f5f6c6172616e6a612e6a706567, 2),
+(3, 'VESTIDO', 'M', 'VERDE- ÃGUA', '100.00', 'VESTIDO TRICÃ´ EM LUREX, COM FENDAS NAS LATERAIS', 0x696d672f7665737469646f5f747269636f5f76657264655f616775612e6a706567, 2),
+(4, 'VESTIDO', 'GG', 'VERDE COM DETALHES EM VERMELHO', '120.00', 'VESTIDO ENVELOPE, COM ELÃ¡STICO NA CINTURA, COM ESTAMPA FLORAL', 0x696d672f7665737469646f5f666c6f7269646f5f656e76656c6f70652e6a706567, 2),
+(5, 'VESTIDO', 'P/M', 'PRETO', '30.00', 'VESTIDO EM LUREX COM RECORTE', 0x696d672f7665737469646f5f707265746f2e6a706567, 2),
+(6, 'VESTIDO', 'M', 'LARANJA CORAL', '120.00', 'VESTIDO EM VISCOSE COM BABADOS E AMARRAÃ§Ã£O NO PESCOÃ§O.', 0x696d672f7665737469646f5f766973636f73652e6a706567, 2),
+(7, 'BODY', 'P', 'AZUL', '70.00', 'BODY MANGA LONGA BUTTERFLY', 0x696d672f626f64795f626f72626f6c6574612e6a7067, 3),
+(8, 'BODY', 'P', 'MARROM', '50.00', 'BODY MANGA LONGA LUANDA', 0x696d672f626f64795f6f6ec3a7612e6a7067, 1),
+(9, 'BLUSA DE ALÃ§A', 'M', 'AMARELO', '30.00', 'BLUSA DE ALÃ§A AMARELA MODAL', 0x696d672f626c7573615f616d6172656c612e6a7067, 4),
+(10, 'BLUSA DE ALÃ§A', 'M', 'LARANJA', '60.00', 'UMA Ã³TIMA COMBINAÃ§Ã£O AGIRÃ¡ PARA O VERÃ£O, SÃ£O NOSSOS CROPPED MODAL.', 0x696d672f626c7573615f6c6172616e6a612e6a7067, 2),
+(11, 'BLUSA DE ALÃ§A', 'M', 'BRANCA', '40.00', 'BLUSA DE ALÃ§A BRANCA MODAL', 0x696d672f626c7573615f6272616e63612e6a7067, 3),
+(12, 'BLUSA DE ALÃ§A', 'GG', 'BRANCA', '70.00', 'BLUSA DE ALÃ§A LONGA', 0x696d672f626c7573615f616cc3a7615f6c6f6e67615f6272616e63612e6a7067, 2),
+(13, 'CALÃ§A ALFAIATARIA', 'M', 'VERDE MUSGO', '80.00', 'CALÃ§A LINHO', 0x696d672f63616c63615f616c665f6d7573676f2e6a7067, 2),
+(14, 'CALÃ§A ALFAIATARIA', 'M', 'VERMELHO', '60.00', 'CALÃ§A ALFAIATARIA CORESH ', 0x696d672f63616c63615f616c66615f7665726d656c68612e6a7067, 2),
+(15, 'CALÃ§A ALFAIATARIA', 'M', 'VERDE MADEIRA', '75.00', 'CALÃ§A ALFAIATARIA CORESH- VERDE MADEIRA', 0x696d672f63616c63615f616c665f76657264655f6d6164656972612e6a7067, 1),
+(16, 'CALÃ§A ALFAIATARIA', 'M', 'VERDE CLARO', '56.99', 'CALÃ§A ALFAIATARIA CORESH- VERDE CLARO ', 0x696d672f63616c63615f616c665f76657264655f636c61726f2e6a7067, 3),
+(17, 'SAIA MIDI', 'G', 'MULTICOR', '80.00', 'SAIA ENVELOPE LISTRADA', 0x696d672f736169615f6d756c7469636f725f6f6e6461732e6a7067, 1),
+(18, 'SAIA MIDI', 'G', 'MULTICOR', '180.00', 'SAIA PLISSADA EM TRICÃ´', 0x696d672f736169615f6d756c7469636f722e6a7067, 2),
+(19, 'SAIA MIDI', 'M', 'PRETO', '100.00', 'SAIA TRICÃ´ HOLANDA ', 0x696d672f736169615f70726574612e6a7067, 5),
+(20, 'SAIA MIDI', 'P', 'ROSA', '80.00', 'SAIA PLISSADA POÃ¡ EM TULE', 0x696d672f736169615f726f73612e6a7067, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tb_venda`
+--
+
+CREATE TABLE `tb_venda` (
+  `ID_VENDA` int(5) NOT NULL COMMENT 'Código para identificar a venda do item.',
+  `ID_PRODUTO` int(5) NOT NULL,
+  `QUANTIDADE` int(4) NOT NULL,
+  `VALOR_UNITARIO` decimal(5,2) NOT NULL,
+  `VALOR_TOTAL` decimal(5,2) NOT NULL,
+  `STATUS_VENDA` varchar(200) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `tb_admin`
+--
+ALTER TABLE `tb_admin`
+  ADD PRIMARY KEY (`ID_ADMIN`);
+
+--
+-- Indexes for table `tb_produto`
+--
+ALTER TABLE `tb_produto`
+  ADD PRIMARY KEY (`ID_PROD`);
+
+--
+-- Indexes for table `tb_venda`
+--
+ALTER TABLE `tb_venda`
+  ADD KEY `tb_venda_ibfk_2` (`ID_PRODUTO`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `tb_admin`
+--
+ALTER TABLE `tb_admin`
+  MODIFY `ID_ADMIN` int(2) NOT NULL AUTO_INCREMENT COMMENT 'Código para identificar um administrador.', AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `tb_produto`
+--
+ALTER TABLE `tb_produto`
+  MODIFY `ID_PROD` int(5) NOT NULL AUTO_INCREMENT COMMENT 'Código para identificar um produto.', AUTO_INCREMENT=21;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Limitadores para a tabela `tb_venda`
+--
+ALTER TABLE `tb_venda`
+  ADD CONSTRAINT `tb_venda_ibfk_2` FOREIGN KEY (`ID_PRODUTO`) REFERENCES `tb_produto` (`ID_PROD`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

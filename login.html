@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar</title>
+    <link rel="stylesheet" href="estilo_tela_ent.css">
+</head>
+<body>
+    <main>
+        <h1>Entrar Painel Admin.</h1>
+        <!--<div class="social-media">
+            <a href="#">
+                <img src="img/google.png" alt="Google">
+            </a>
+            <a href="#">
+                <img src="img/facebook.png" alt="Facebook">
+            </a>
+        </div>-->
+
+        <div class="alternative">
+            <span></span>
+        </div>
+
+        <form action="login.php" method="POST"> <!--action="arquivo do php adicionando ao banco"/ Incluir o method="GET"-->
+            <label for="email">
+                <span>Endereço de E-mail <i class="far fa-envelope"></i></span>
+                <input type="email" id="email" name="email" required>
+            </label>
+
+            <label for="senha">
+                <span>Senha <i class="fas fa-lock"></i></span>
+                <input type="password" id="senha" name="senha" required>
+                <!-- <i class="fas fa-eye" id="visibilityBtn"></i> -->
+                
+            </label>
+
+            <input type="submit" value="Entrar" id="button">
+        </form>
+<!--         <p>Ainda não possuí login no site da nossa loja? <a href="cadastrar.html">   Cadastrar-se</a></p> -->    
+    </main>
+    <section class="images">
+        <img src="img/Logotipo.PNG" alt="Mobile">
+        <div class="circle"></div>
+    </section>
+
+    <script src="admin_dashbord/show_bt.js"></script>
+    <script src="https://kit.fontawesome.com/6bb7bca18b.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

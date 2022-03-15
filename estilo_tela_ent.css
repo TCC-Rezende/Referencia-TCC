@@ -1,0 +1,267 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: serif;
+}
+
+@font-face {
+    font-family: Retiro Std Refular;
+    src: url();
+}/*função para trocar fonte*/
+
+body {
+    background: #6570a4;
+    display: flex;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+main {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main h1 {
+    color: #000000cc;
+    font-weight: bold;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* 
+    ATUALIZAÇÕES FUTURAS
+main.social-media {
+    display: flex;
+    align-content: center;
+}
+
+main .social-media a {
+    text-decoration: none;
+}
+
+main .social-media img {
+    width: 1.8rem;
+    margin-left: 8.4rem;
+}
+
+main .social-media a:first-child img {
+    margin-left: 0;
+}
+ */
+main .alternative {
+    margin-bottom: 2rem;
+}
+
+main .alternative span {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.7);
+    position: relative;
+}
+
+main .alternative span::before, main .alternative span::after {
+    position: absolute;
+    content: '';
+    height: 0.2rem;
+    width: 12rem;
+    bottom: 50%;
+    right: 0px;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+main .alternative span::after {
+    left: 0px;
+}
+
+main form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main form label {
+    color: rgba(0, 0, 0, 0.9);
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+}
+
+main form label span {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+}
+
+main form input {
+    background: #636FA4;
+    width: 350px;
+    height: 50px;
+    padding: 0 0.5rem;
+    margin-top: 0.2rem;
+    outline: none;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 1.1rem;
+    border-bottom: 0.1rem solid rgba(50, 50, 50, 0.8);
+}
+
+main form input[type="submit"] {
+    position: relative;
+    top: 2em;
+    cursor: pointer;
+    width: 8em;
+    height: auto;
+    padding: .3em;
+    border: none;
+    border-radius: 0.2rem;
+    background: #2b3c85;
+    color: rgba(250, 250 , 250, 5);
+    letter-spacing: 0.1rem;
+    font-size: 1.2rem;
+    transition: all .3s ease-in-out;
+    transform: scale(1);
+}
+
+main form input[type="submit"]:hover {
+    transition: .8s;
+    transform: scale(1.05);
+    background: #f490a8;
+}
+/* 
+    ATUALIZAÇÕES FUTURAS
+main p{
+    color:rgba(0, 0, 0, 0.8);
+    margin-top: 1rem;
+    font-size: 1rem;    
+}
+main p a{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.8);
+}
+main p a:hover{
+    text-decoration: underline;
+    color: rgba(65, 105, 225, 0.9);
+} */
+
+.fa-envelope{
+    position: relative;
+    font-size: .8em;
+    left: .5em;
+}
+
+.fa-lock{
+    position: relative;
+    font-size: .8em;
+    left: .5em;
+}
+section.images {
+    width: 35vw;
+    margin-bottom: 2.3em;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 4rem;
+}
+
+section.images img {
+    width: fit-content;
+    border-radius: 500px ;
+}
+
+section.images .circle {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(25deg, #f490a8, #5c69a7);
+    /*background: linear-gradient(45deg, #262626, #0000);*/
+    clip-path: circle(40% at right 80%);
+    z-index: -1;
+}
+
+.erro_nao_autenticado{
+    position: relative;
+    top: 5em;
+    left: 30vw;
+    width: 35em;
+    height: 15em;
+    flex-direction: column;
+    background-color: rgb(250, 250, 250);
+    box-shadow: .1em .1em .5em #000;
+    border-radius: .5em;
+    z-index: 1;
+    text-align: center;
+    color: #fff; 
+    font-family: Lato;
+}
+
+.fa-exclamation-triangle{
+    position: relative;
+    top: .2em;
+    font-size: 2.5em;
+    color: #ffea00;
+}
+
+.erro_nao_autenticado h2{
+    font-size: 1.6em;
+    margin-top: 1em;
+    color: #636FA4;
+}
+
+.erro_nao_autenticado a{
+    position: relative;
+    top: 1em;
+    font-size: 1.3em;
+    color: #f583a0;
+    text-decoration: none;
+}
+
+.erro_nao_autenticado a:hover{
+    opacity: .8;
+}
+
+.link_return{
+    position: relative;
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1200px) {
+    section.images img {
+        width: 110%;
+    }
+
+    section.images .circle {
+        clip-path: circle(35% at right 80%);
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    section.images {
+        display: none;
+        visibility: hidden;
+    }
+
+    main {
+        width: 100vw;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    main h1 {
+        font-size: 2rem;
+    }
+
+    main .alternative span {
+        font-size: 0.8rem;
+    }
+
+    main form label span, main form input[type="submit"] {
+        font-size: 1rem;
+    }
+}
